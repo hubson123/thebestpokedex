@@ -2,26 +2,38 @@
 import { IMAGE_PATH } from "@/types/constants";
 import { Pokemon } from "@/types/pokemon";
 import React,{ useState } from "react";
-import { HomeContainer, ListItem } from './Home.styled';
+import { HomeContainer, ListItem, ListWrapper, HiddenButton } from './Home.styled';
+import { Button } from "../Button.styled";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { LuMousePointerClick } from "react-icons/lu";
+
 
 interface Props{
     pokemonList: any[]
 }
 
 const Layout = ({pokemonList}: Props) =>{
+    const router = useRouter()
     const [offset,setOffset] = useState(0)
-    const list = pokemonList?.map((pokemon: any,key: number)=>
+
+    const handleClick = (index:number) =>{
+        router.push(`/details/${index}`)
+    }
+    const list = pokemonList?.map((pokemon: Pokemon,key: number)=>
        ( 
-        <ListItem>
-            <p>{pokemon.name}</p>
-            <img width={35} height={35} src={`${IMAGE_PATH}${offset+key+1}.png`} alt={`${pokemon.name}`} />
-        
-            </ListItem>
+        <ListItem url={`${IMAGE_PATH}${offset+key+1}.png`} onClick={()=> handleClick(offset+key+1)}>
+            <h3>{pokemon.name}</h3>
+            <HiddenButton><Link href={`/details/${key+1}`}>Szczegóły</Link></HiddenButton>
+        </ListItem>
         ))
     
     return(
         <HomeContainer>
+        <h2>Welcome in Pokedex</h2>
+        <ListWrapper>
         {list}
+        </ListWrapper>
         </HomeContainer>
     )
 }
