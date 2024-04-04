@@ -13,10 +13,13 @@ export const HomeContainer = styled(Flex)`
     }
     h3{
         text-align: center;
-        max-width: 80%;
+        max-width: 50%;
     }
     h2{
         margin-top: ${SPACES.m}px;
+    }
+    svg{
+        cursor: pointer;
     }
 `
 export const HiddenButton = styled(Button)`
@@ -58,4 +61,3 @@ export const ListWrapper = styled.div`
     max-width: 1200px;
     gap: ${SPACES.m}px;
 `
-

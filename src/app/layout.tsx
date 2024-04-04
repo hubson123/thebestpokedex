@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body style={{margin:0}} className={roboto.className}>
         <Providers>
         {children}
         </Providers>

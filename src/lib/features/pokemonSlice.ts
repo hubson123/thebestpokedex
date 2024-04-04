@@ -25,7 +25,6 @@ export const pokemonSlice = createSlice({
   reducers: {
     setPokemon: (state: PokemonState,action: PayloadAction<PokemonDetails>) => {
       state.pokemon=action.payload
-      console.log('State: ',state.pokemon)
     },
     clearPokemon: (state: PokemonState) => {
         state=initialState
