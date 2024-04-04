@@ -3,7 +3,7 @@ export const setTypeColor = (name: string) =>{
     switch(name){
         case 'poison': return 'purple';
         case 'fire': return 'red';
-        case 'water': return 'blue';
+        case 'water': return '#6390F0';
         case 'electric': return 'yellow';
         case 'fairy': return 'pink';
         case 'dark': return 'gray';
