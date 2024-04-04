@@ -7,6 +7,17 @@ import { Button } from "../Button.styled";
 export const HomeContainer = styled(Flex)`
     background-color: ${COLORS.lightGray};
     flex-direction: column;
+    h2,h3{
+        margin:0;
+        margin-bottom: ${SPACES.xl}px;
+    }
+    h3{
+        text-align: center;
+        max-width: 80%;
+    }
+    h2{
+        margin-top: ${SPACES.m}px;
+    }
 `
 export const HiddenButton = styled(Button)`
     display: none;
@@ -24,6 +35,7 @@ export const ListItem = styled.div<{url:string}>`
     h3{
         color: darkBlue;
         padding: 0;
+        max-width: 100%;
         margin-top: -${SPACES.xxs}px;
         background-color: orange;
         text-transform: capitalize;
