@@ -5,8 +5,8 @@ import { Button } from "../Button.styled";
 
 export const Title = styled(Flex)`
     margin-right: ${2*SPACES.xl}px;
-    width: 400px;
-    font-size: 40px;
+    width: 420px;
+    font-size: 37px;
     @media (max-width: 900px) {
         margin-right:0;
         margin: 0 ${SPACES.m}px;
