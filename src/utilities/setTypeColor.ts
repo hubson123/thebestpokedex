@@ -1,3 +1,4 @@
+// funkcja sprawdzający typ pokemona i zwracająca odpowiedni kolor dla tagu
 export const setTypeColor = (name: string) =>{
     switch(name){
         case 'poison': return 'purple';

@@ -8,6 +8,8 @@ interface PokemonListState {
 const initialState: PokemonListState = {
    list: []
 }
+
+//dwie akcje odpowiedzialne ze zarządzaniem stanem aplikacji
 export const pokemonListSlice = createSlice({
   name: 'pokemonList',
   initialState,
