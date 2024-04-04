@@ -1,17 +1,18 @@
 'use client'
-import { IMAGE_PATH } from "@/types/constants";
-import { Pokemon, PokemonDetails } from "@/types/pokemon";
 import React,{ useEffect, useState } from "react";
 import Link from "next/link";
-import { Button } from '../Button.styled';
-import { DetailsContainer, PokemonContainer, AttributesContainer, InformationContainer, StatisticsContainer } from './Details.styled';
 import { GiWeight, GiBodyHeight } from "react-icons/gi";
-import { Tag } from "@/components/Tag.styled";
+
+import { IMAGE_PATH, SPACES } from "@/types/constants";
+import { Pokemon, PokemonDetails } from "@/types/pokemon";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks/useRedux";
 import { setPokemon } from "@/lib/features/pokemonSlice";
-import { setTypeColor } from '../../utilities/setTypeColor';
-import { url } from "inspector";
+import { setTypeColor } from '@/utilities/setTypeColor';
+
 import { Flex } from '../Flex.styled';
+import { Tag } from "@/components/Tag.styled";
+import { DetailsContainer, Title, PokemonContainer, AttributesContainer, InformationContainer, StatisticsContainer, ReturnButton } from './Details.styled';
+import { Button } from '../Button.styled';
 
 interface Props{
     pokemon: PokemonDetails
@@ -27,9 +28,12 @@ const Layout = ({pokemon}: Props) =>{
 
     return(
         <DetailsContainer>
-            <AttributesContainer url='https://cdn.pixabay.com/photo/2023/06/24/03/50/monster-ball-8084507_1280.png'>
+            <AttributesContainer>
+            <Title>
+            <h1>{pokemon.name}</h1>
+            </Title>
             <InformationContainer>
-            <h3>Podstawowe informacje: </h3>
+            <h2>Podstawowe informacje: </h2>
             <Flex>
                 <p><GiWeight size={30} /> {(pokeState.weight*0.1).toFixed(2)} kg</p>
                 <p><GiBodyHeight size={30} /> {(pokeState.height*0.1).toFixed(1)} m</p>
@@ -52,12 +56,12 @@ const Layout = ({pokemon}: Props) =>{
                     )}
             </StatisticsContainer>
 
-            <Button><Link href={'/'}>Powrót</Link></Button>
+            <ReturnButton><Link href={'/'}>Powrót do strony głównej</Link></ReturnButton>
             </AttributesContainer>
             <PokemonContainer>
-            <h2>{pokeState.name}</h2>
+                <h2> Wersja standard: </h2>
                 <img height={300} src={pokeState.sprites.front_default} />
-                <h3> Wersja shiny: </h3>
+                <h2> Wersja shiny: </h2>
                 <img height={300} src={pokeState.sprites.front_shiny} />
             </PokemonContainer>
         </DetailsContainer>

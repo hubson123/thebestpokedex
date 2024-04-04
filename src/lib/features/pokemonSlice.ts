@@ -7,16 +7,17 @@ interface PokemonState {
 }
 
 const initialState: PokemonState = {
-    pokemon:{name: '',
-    weight: 0,
-    height: 0,
-    types: [],
-    abilities: [],
-    stats: [],
-    sprites:{
-      front_default: '',
-      front_shiny: ''
-    }
+    pokemon:{
+      name: '',
+      weight: 0,
+      height: 0,
+      types: [],
+      abilities: [],
+      stats: [],
+      sprites:{
+        front_default: '',
+        front_shiny: ''
+      }
   }
 }
 export const pokemonSlice = createSlice({

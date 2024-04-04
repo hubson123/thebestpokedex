@@ -1,4 +1,4 @@
-
+// dwa typy uzywane w aplikacji - Pokemon - typ pokemona w liście, Pokemon Details - szczegółowy typ
 export interface Pokemon {
     name: string;
     url: string;
