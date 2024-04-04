@@ -11,5 +11,6 @@ export const Button = styled.button`
     a{
         text-decoration: none;
         color: black;
+        font-size: 16px;
     }
 `

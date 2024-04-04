@@ -10,6 +10,7 @@ interface ProviderProps{
     children: ReactNode
 }
 
+// prosty provider w stworzony aby moc korzystać z redux oraz styled-components
 export function Providers({ children }: ProviderProps) {
   return (
     <StyledComponentsRegistry>

@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { Flex } from "../Flex.styled";
 import { COLORS, SPACES } from "@/types/constants";
+import { Button } from "../Button.styled";
 
 export const DetailsContainer = styled.div`
     display: flex;
@@ -49,4 +50,9 @@ export const InformationContainer = styled(StatisticsContainer)`
         margin:0
     }
 
+`
+export const ReturnButton = styled(Button)`
+    position: absolute;
+    bottom: ${SPACES.m}px;;
+    right: ${SPACES.m}px;;
 `

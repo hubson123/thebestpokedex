@@ -4,7 +4,7 @@ import { Pokemon, PokemonDetails } from "@/types/pokemon";
 import React,{ useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from '../Button.styled';
-import { DetailsContainer, PokemonContainer, AttributesContainer, InformationContainer, StatisticsContainer } from './Details.styled';
+import { DetailsContainer, PokemonContainer, AttributesContainer, InformationContainer, StatisticsContainer, ReturnButton } from './Details.styled';
 import { GiWeight, GiBodyHeight } from "react-icons/gi";
 import { Tag } from "@/components/Tag.styled";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks/useRedux";
@@ -52,7 +52,7 @@ const Layout = ({pokemon}: Props) =>{
                     )}
             </StatisticsContainer>
 
-            <Button><Link href={'/'}>Powrót</Link></Button>
+            <ReturnButton><Link href={'/'}>Powrót do strony głównej</Link></ReturnButton>
             </AttributesContainer>
             <PokemonContainer>
             <h2>{pokeState.name}</h2>
